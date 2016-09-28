@@ -43,7 +43,11 @@ script:
   - echo "travis_fold:end:download_extract_testdata"
 # run unit tests
   - echo "travis_fold:start:unit_tests"
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Duplicati/UnitTest/bin/Release/Duplicati.UnitTest.dll
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Duplicati/UnitTest/bin/Release/Duplicati.UnitTest.dll /where:cat==Border
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Duplicati/UnitTest/bin/Release/Duplicati.UnitTest.dll /where:cat==BulkData
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Duplicati/UnitTest/bin/Release/Duplicati.UnitTest.dll /where:cat==SVNData
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Duplicati/UnitTest/bin/Release/Duplicati.UnitTest.dll /where:cat==SVNDataLong
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Duplicati/UnitTest/bin/Release/Duplicati.UnitTest.dll /where:cat==Targeted
   - echo "travis_fold:end:unit_tests"
 # start server and run gui tests
   - mono ./Duplicati/GUI/Duplicati.GUI.TrayIcon/bin/Release/Duplicati.Server.exe &

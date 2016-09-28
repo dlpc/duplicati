@@ -32,6 +32,7 @@ namespace Duplicati.UnitTest
 		}
 
 		[Test]
+        [Category("Targeted")]
 		public void RunCommands()
 		{
 			var testopts = TestOptions;
